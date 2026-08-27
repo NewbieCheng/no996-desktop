@@ -1,0 +1,36 @@
+{
+  "name": "no996-desktop",
+  "productName": "不加班工作台",
+  "version": "0.1.0",
+  "private": true,
+  "description": "不加班工作台桌面端（Electron + React）",
+  "type": "module",
+  "main": "dist/main/index.cjs",
+  "engines": {
+    "node": ">=22.19 <27"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:electron": "node scripts/dev-electron.mjs",
+    "build": "npm run build:web && npm run build:main",
+    "build:web": "vite build",
+    "build:main": "node scripts/build-main.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "pack:win": "npm run build && electron-builder --win --x64",
+    "pack:mac": "npm run build && electron-builder --mac --arm64 --x64"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^5.1.4",
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  }
+}
