@@ -95,6 +95,17 @@ no996-desktop/
 依赖安装遇 Electron 下载超时：先设
 `$env:ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"` 再 `npm install`。
 
+## Git 与推送规范
+
+- **远程仓库**：`origin = https://github.com/NewbieCheng/no996-desktop.git`，主分支 `main`，推送用 `git push`（上游已跟踪）。
+- **提交前检查**：`npm run typecheck` 通过 + `npm run build` 通过；改动涉及功能任务时先更新 [PROGRESS.md](PROGRESS.md) 勾选，与代码同一提交。
+- **提交信息**：`类型: 摘要`（`feat` / `fix` / `chore` / `docs`），正文写改了什么、为什么；一次提交只做一件事。
+- **不提交内容**：`node_modules/`、`dist/`、`out/`（打包产物）、任何 `.env` 与密钥；`.gitignore` 已覆盖，勿绕过 `-f` 强加。
+- **网络注意（本机已实测）**：直连 github.com 443 会超时/被重置。首次推送已验证走本地代理成功：
+  `git -c http.proxy=http://127.0.0.1:7897 push`。若直连失败，用该单次参数；需要长期生效再设
+  `git config --global http.proxy http://127.0.0.1:7897`（取消：`git config --global --unset http.proxy`），不默认写入全局配置。
+- **回滚**：误推后修正用 `git revert`（生成反向提交），禁止对已推送的 `main` 做 `reset + force-push`。
+
 ## 约定（必守）
 
 1. **进度记录**：完成任何任务立即更新 [PROGRESS.md](PROGRESS.md)：`未开始 → ✅`，补日期与产物说明。
