@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="currentColor">
+  <!-- Personal / User Icon: User + Plus -->
+  <path d="M85 20a45 45 0 1 0 45 45 45 45 0 0 0-45-45z"/>
+  <path d="M95 105c-3 0-6.1.3-9.1.8A75 75 0 0 0 20 185c0 2.8 2.2 5 5 5h85a55 55 0 0 1 0-16.7c0-26.6 18.2-49 43.1-55.5-16.5-8.5-35.3-13.6-58.1-13.6z"/>
+  <!-- Plus symbol -->
+  <path d="M165 125h-10v20h-20v10h20v20h10v-20h20v-10h-20z"/>
+</svg>

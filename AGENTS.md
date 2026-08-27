@@ -40,6 +40,10 @@ no996-desktop/
 │   └── shared/                    # 渲染层/主进程共用类型（待补）
 ├── docs/
 │   └── product/                   # 产品架构文档副本（权威源在 deepseek-harness 仓库，见顶部说明）
+├── public/                        # 静态资源包（复制自后端 web/admin/public，Vite 按根路径原样服务）
+│   ├── brand/                     # 品牌 SVG：logo（横版/方形 × 黑彩navy白）、no996-badge、角色头像、箭头、书本
+│   ├── food/                      # 食物插画 SVG（示例业务素材）
+│   └── login-hero/                # 登录页轮播图 slide-1~3.png
 ├── resources/                     # 打包资源（icon.ico / icon.icns，待补）
 ├── AGENTS.md                      # 本文件（含后端核心文件对照表、web/admin 组件复用表）
 └── PROGRESS.md                    # 开发进度（打勾统计，唯一权威）
@@ -79,6 +83,7 @@ no996-desktop/
 | 技术栈版本对齐 | `package.json` | Tailwind v4 + `@base-ui/react` + TanStack Table v9 + Recharts + sonner；**React 锁 18.3**（本仓库引入 Tailwind 时同步降 React，见约定 8） |
 | 字体 | `src/fonts/alibaba-puhuiti.css`、`@fontsource-variable/*` | 跟随复制，保持品牌一致 |
 | 布局骨架参考 | `src/layout/ConsoleLayout.tsx`、`src/components/layout/`（`AppSidebar`/`ConsoleHeader`） | ShellLayout（TopBar 双模式 + Sidebar）的参照实现 |
+| 静态资源/图标包 | `public/`（已复制到本仓库同名目录：brand 17 + food 11 + login-hero 3） | 页面直接 `/brand/xxx.svg` 引用；后端 `public/` 更新时整体覆盖同步 |
 | 国际化规则 | `src/i18n/`（5 语言同名 key） | 本仓库 V1 先中文硬编码（桌面单语言），V2 若做多语言再引入同规则 |
 
 ## 命令
